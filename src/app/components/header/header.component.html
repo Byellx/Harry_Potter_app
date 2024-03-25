@@ -1,0 +1,17 @@
+<header [ngClass]="header_styles.header_main">
+    <nav [ngClass]="header_styles.header_navigation">
+        <ul [ngClass]="header_styles.header_links_box">
+            <li
+                [ngClass]="header_styles.header_links_item"
+                *ngFor="let page of pages"
+            >
+                <a
+                    [ngClass]="header_styles.header_links"
+                    routerLink={{page.link}}
+                >
+                    {{page.title}}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

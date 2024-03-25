@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+$gryffindor-red: #740001;
+$gryffindor-gold: #D3A625;
+$slytherin-green: #1A472A;
+$slytherin-silver: #5D5D5D;
+$hufflepuff-yellow: #FFD800;
+$hufflepuff-black: #000000;
+$ravenclaw-blue: #0E1A40;
+$ravenclaw-bronze: #946B2D;
+
+@font-face {
+    font-family: potterhead;
+    src: url(./assets/HARRYP__.TTF) format('woff2'),
+        url(./assets/HARRYP__.TTF) format('woff');
+}
+
+@mixin flex-centralize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: potterhead;
+}
+
+a{
+    @include flex-centralize();
+    color: $gryffindor-gold;
+    text-decoration: none;
+    transition: all .4s ease-in-out;
+}
+
+a:hover{
+    color: $hufflepuff-yellow;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $hufflepuff-yellow;
+    transition: all .5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: $ravenclaw-bronze;
+}
+
+::-webkit-scrollbar-track{
+    background-color: $hufflepuff-black;
+}
