@@ -1,5 +1,5 @@
 <main>
-    <ul>
+    <ul *ngIf="books">
         <li *ngFor="let book of books.data">
                 <section [ngClass]="books_styles.cover_section">
                     <img

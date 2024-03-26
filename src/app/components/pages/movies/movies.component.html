@@ -1,5 +1,5 @@
 <main>
-    <ul>
+    <ul *ngIf="movies">
         <li *ngFor="let movie of movies.data">
                 <section [ngClass]="books_styles.cover_section">
                     <img

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgClass } from '@angular/common';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 import { GeneralService } from '../../../services/general.service';
 import { Response } from '../../../models/response';
 
@@ -8,6 +8,7 @@ import { Response } from '../../../models/response';
   standalone: true,
   imports: [
     NgClass,
+    NgIf,
     NgFor
   ],
   templateUrl: './books.component.html',
