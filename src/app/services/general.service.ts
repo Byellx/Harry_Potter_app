@@ -10,7 +10,7 @@ export class GeneralService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllBooks(url: string): Observable<Response>{
+  public getAPI(url: string): Observable<Response>{
     return this.http.get<Response>(url)
   }
 }

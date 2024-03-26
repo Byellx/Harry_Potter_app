@@ -31,7 +31,7 @@ export class BooksComponent {
   private url: string = 'https://api.potterdb.com/v1/books'
 
   private catchAllBooks(url: string){
-    this.service.getAllBooks(url).subscribe(
+    this.service.getAPI(url).subscribe(
       (books: Response) =>{
         this.books = books
       }

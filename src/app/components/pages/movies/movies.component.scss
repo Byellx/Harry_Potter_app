@@ -1,0 +1,70 @@
+@import '../../../../styles.scss';
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+     
+    ul{
+        @include flex-centralize();
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        list-style: none;
+        background-color: $ravenclaw-blue;
+
+        li{
+            background-color: $hufflepuff-black;
+            color: $ravenclaw-bronze;
+            width: 80%;
+            height: 80vh;
+            border-radius: 20px;
+            display: flex;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            border: .2em solid $hufflepuff-yellow;
+
+            .cover_section{
+                @include flex-centralize();
+                height: 100%;
+                width: 30%;
+
+                .cover{
+                    height: 400px;
+                    width: auto;
+                    transition: all 1s ease;
+                }
+
+                .cover:hover{
+                    transform: scale(1.2);
+                }
+            }
+
+            .book_info_section{
+                height: 100%;
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-top: 1.5em;
+                padding-bottom: 1.5em;
+                overflow: auto;
+                
+                iframe{
+                    border: 1px solid gold;
+                    height: 30%;
+                    width: 80%;
+                }
+                
+                p{
+                    text-indent: 2em;
+                    text-align: justify;
+                    padding: 1.5em;
+                }
+            }
+        }
+    }
+}

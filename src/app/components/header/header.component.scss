@@ -33,6 +33,23 @@
             list-style: none;
             background-color: $slytherin-green;
             border: .1em solid $ravenclaw-bronze;
+
+            .header_links_item{
+                @include flex-centralize();
+                transition: all .7s ease;
+                height: 100%;
+                width: calc(100%/7);
+
+                .header_links{
+                    height: 100%;
+                    width: 100%;
+                }
+                
+            }
+
+            .header_links_item:hover{
+                background-color: lighten($slytherin-green, 10%);
+            }
         }
     }
 }
