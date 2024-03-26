@@ -36,7 +36,6 @@ export class MoviesComponent {
   private catchAllMovies(url: string){
     this.service.getAPI(url).subscribe(
       (movies: Response)=>{
-        console.log(movies)
         this.movies = movies
       }
     )
