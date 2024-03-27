@@ -1,1 +1,65 @@
-<p>characters works!</p>
+<main>
+    <ul *ngIf="characters">
+        <li *ngFor="let character of characters">
+                <section [ngClass]="characters_styles.image_section">
+                    <img
+                        src={{character.image}}
+                        [ngClass]="characters_styles.image"
+                    />
+                </section>
+
+                <section [ngClass]="characters_styles.character_info_section">
+                    <div [ngClass]="characters_styles.character_name">
+                        <h1>{{character.name}}</h1>
+                    </div>
+
+                    <div [ngClass]="characters_styles.character_info_summary">
+                        
+                    </div>
+
+                    <div [ngClass]="characters_styles.character_info_details">
+                        Alias Names: <span *ngFor="let alias_names of character.alias_names">
+                            {{alias_names}};
+                           </span><br/>
+                           Animagus: {{character.animagus}}<br/>
+                           Blood Status: {{character.blood_status}}<br/>
+                           Boggart: {{character.boggart}}<br/>
+                           Born: {{character.born}}<br/>
+                           Died: {{character.died}}<br/>
+                           Eye Color: {{character.eye_color}}<br/>
+                           Family: <span *ngFor="let family_member of character.family_members">
+                               {{family_member}};
+                           </span><br/>
+                           Gender: {{character.gender}}<br/>
+                           Hair Color: {{character.hair_color}}<br/>
+                           Height: {{character.height}}<br/>
+                           House: {{character.house}}<br/>
+                           Jobs: <span *ngFor="let job of character.jobs">
+                               {{job}};
+                           </span><br/>
+                           Marital Status: {{character.marital_status}}<br/>
+                           Nationality: {{character.nationality}}<br/>
+                           Patronus: {{character.patronus}}<br/>
+                           Romances: <span *ngFor="let romance of character.romances">
+                               {{romance}};
+                           </span><br/>
+                           Skin Color: {{character.skin_color}}<br/>
+                           Species: {{character.species}}<br/>
+                           Titles: <span *ngFor="let title of character.titles">
+                               {{title}};
+                           </span><br/>
+                           Wands: <span *ngFor="let wand of character.wands">
+                               {{wand}};
+                           </span><br/>
+                           Weight: {{character.weight}}<br/>
+                    </div>
+
+                    <a
+                        href={{character.wiki}}
+                        [ngClass]="characters_styles.character_more"
+                        target="_blank"
+                    >See more</a>
+                </section>
+        </li>
+    </ul>
+</main>

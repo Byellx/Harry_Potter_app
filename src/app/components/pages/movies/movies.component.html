@@ -1,61 +1,61 @@
 <main>
     <ul *ngIf="movies">
-        <li *ngFor="let movie of movies.data">
-                <section [ngClass]="books_styles.cover_section">
+        <li *ngFor="let movie of movies">
+                <section [ngClass]="movies_styles.poster_section">
                     <img
-                        src={{movie.attributes.poster}}
-                        [ngClass]="books_styles.cover"
+                        src={{movie.poster}}
+                        [ngClass]="movies_styles.poster"
                     />
                 </section>
 
-                <section [ngClass]="books_styles.book_info_section">
-                    <div [ngClass]="books_styles.book_title">
-                        <h1>{{movie.attributes.title}}</h1>
+                <section [ngClass]="movies_styles.movie_info_section">
+                    <div [ngClass]="movies_styles.movie_title">
+                        <h1>{{movie.title}}</h1>
                     </div>
 
-                    <div [ngClass]="books_styles.book_info_summary">
-                        <p>{{movie.attributes.summary}}</p>
+                    <div [ngClass]="movies_styles.movie_info_summary">
+                        <p>{{movie.summary}}</p>
                     </div>
 
-                    <div [ngClass]="books_styles.book_info_details">
+                    <div [ngClass]="movies_styles.movie_info_details">
                         Director:
                             <span
-                                *ngFor="let director of movie.attributes.directors"
+                                *ngFor="let director of movie.directors"
                             >{{director}}</span><br/>
                         Producer:
                             <span
-                                *ngFor="let producer of movie.attributes.producers"
+                                *ngFor="let producer of movie.producers"
                             > {{producer}};</span><br/>
                         Screenwriter:
                             <span
-                                *ngFor="let screenwriter of movie.attributes.screenwriters"
+                                *ngFor="let screenwriter of movie.screenwriters"
                             > {{screenwriter}};</span><br/>
                         Music By:
                             <span
-                                *ngFor="let composer of movie.attributes.music_composers"
+                                *ngFor="let composer of movie.music_composers"
                             > {{composer}};</span><br/>
                         Editor:
                             <span
-                                *ngFor="let editor of movie.attributes.editors"
+                                *ngFor="let editor of movie.editors"
                             > {{editor}};</span><br/>
                         Cinematographer:
                             <span
-                                *ngFor="let cinematographer of movie.attributes.cinematographers"
+                                *ngFor="let cinematographer of movie.cinematographers"
                             > {{cinematographer}};</span><br/>
-                        Running Time: {{movie.attributes.running_time}}<br/>
-                        Release Date: {{movie.attributes.release_date}}<br/>
-                        Rating: {{movie.attributes.rating}}<br/>
-                        Budget: {{movie.attributes.budget}}<br/>
-                        Box Office: {{movie.attributes.box_office}}<br/>
+                        Running Time: {{movie.running_time}}<br/>
+                        Release Date: {{movie.release_date}}<br/>
+                        Rating: {{movie.rating}}<br/>
+                        Budget: {{movie.budget}}<br/>
+                        Box Office: {{movie.box_office}}<br/>
                         Distributors:
                             <span
-                                *ngFor="let distributor of movie.attributes.distributors"
+                                *ngFor="let distributor of movie.distributors"
                             >{{distributor}}</span><br/>
                     </div>
 
                     <a
-                        href={{movie.attributes.wiki}}
-                        [ngClass]="books_styles.book_more"
+                        href={{movie.wiki}}
+                        [ngClass]="movies_styles.movie_more"
                         target="_blank"
                     >See more</a>
                 </section>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgIf, NgFor, NgClass } from '@angular/common';
 import { GeneralService } from '../../../services/general.service';
 import { Response } from '../../../models/response';
+import { Book } from '../../../models/book';
 
 @Component({
   selector: 'app-books',
@@ -19,7 +20,7 @@ export class BooksComponent {
     this.catchAllBooks(this.url)
   }
 
-  public books!: Response
+  public books: Book[] = []
   public books_styles = {
     cover_section: 'cover_section',
     cover: 'cover',
@@ -34,7 +35,12 @@ export class BooksComponent {
   private catchAllBooks(url: string){
     this.service.getAPI(url).subscribe(
       (books: Response) =>{
-        this.books = books
+        books.data.forEach((book)=>{
+          if(book.type === 'book'){
+            const book_attributes = book.attributes as Book
+            this.books.push(book_attributes)
+          }
+        })
       }
     )
   }

@@ -1,31 +1,31 @@
 <main>
     <ul *ngIf="books">
-        <li *ngFor="let book of books.data">
+        <li *ngFor="let book of books">
                 <section [ngClass]="books_styles.cover_section">
                     <img
-                        src={{book.attributes.cover}}
+                        src={{book.cover}}
                         [ngClass]="books_styles.cover"
                     />
                 </section>
 
                 <section [ngClass]="books_styles.book_info_section">
                     <div [ngClass]="books_styles.book_title">
-                        <h1>{{book.attributes.title}}</h1>
+                        <h1>{{book.title}}</h1>
                     </div>
 
                     <div [ngClass]="books_styles.book_info_summary">
-                        <p>{{book.attributes.summary}}</p>
+                        <p>{{book.summary}}</p>
                     </div>
 
                     <div [ngClass]="books_styles.book_info_details">
-                        Author: {{book.attributes.author}}<br/>
-                        Pages: {{book.attributes.pages}}<br/>
-                        Release Date: {{book.attributes.release_date}}<br/>
-                        Dedication: {{book.attributes.dedication}}<br/>
+                        Author: {{book.author}}<br/>
+                        Pages: {{book.pages}}<br/>
+                        Release Date: {{book.release_date}}<br/>
+                        Dedication: {{book.dedication}}<br/>
                     </div>
 
                     <a
-                        href={{book.attributes.wiki}}
+                        href={{book.wiki}}
                         [ngClass]="books_styles.book_more"
                         target="_blank"
                     >See more</a>
