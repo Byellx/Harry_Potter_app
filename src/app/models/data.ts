@@ -1,6 +1,8 @@
 import { Book } from './book'
 import { Character } from './character'
 import { Movie } from './movie'
+import { Potion } from './potion'
+import { Spell } from './spell'
 
 export interface Data{
     attributes: Data_Type,
@@ -9,4 +11,4 @@ export interface Data{
     type: string
 }
 
-type Data_Type = Book | Character | Movie
+type Data_Type = Book | Character | Movie | Potion | Spell

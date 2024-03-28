@@ -1,1 +1,39 @@
-<p>potions works!</p>
+<main>
+    <ul *ngIf="potions">
+        <li *ngFor="let potion of potions">
+            <section [ngClass]="potion_styles.image_section">
+                <img
+                    src={{potion.image}}
+                    [ngClass]="potion_styles.image"
+                />
+            </section>
+
+            <section [ngClass]="potion_styles.potion_info_section">
+                <div [ngClass]="potion_styles.potion_name">
+                    <h1>{{potion.name}}</h1>
+                </div>
+
+                <div [ngClass]="potion_styles.potion_info_summary">
+                    Characteristics: {{potion.characteristics}}<br/>
+                    Difficulty: {{potion.difficulty}}<br/>
+                    Effect: {{potion.effect}}<br/>
+                    Ingredients: {{potion.ingredients}}<br/>
+                    Inventors: {{potion.inventors}}<br/>
+                    Manufacturers: {{potion.manufacturers}}<br/>
+                    Side Effects: {{potion.side_effects}}<br/>
+                    Time: {{potion.time}}<br/>
+                </div>
+
+                <div [ngClass]="potion_styles.potion_info_details">
+                    
+                </div>
+
+                <a
+                    href={{potion.wiki}}
+                    [ngClass]="potion_styles.potion_more"
+                    target="_blank"
+                >See more</a>
+            </section>
+        </li>
+    </ul>
+</main>

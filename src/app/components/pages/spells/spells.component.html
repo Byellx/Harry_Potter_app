@@ -1,1 +1,37 @@
-<p>spells works!</p>
+<main>
+    <ul *ngIf="spells">
+        <li *ngFor="let spell of spells">
+            <section [ngClass]="spell_styles.image_section">
+                <img
+                    src={{spell.image}}
+                    [ngClass]="spell_styles.image"
+                />
+            </section>
+
+            <section [ngClass]="spell_styles.spell_info_section">
+                <div [ngClass]="spell_styles.spell_name">
+                    <h1>{{spell.name}}</h1>
+                </div>
+
+                <div [ngClass]="spell_styles.spell_info_summary">
+                    Category: {{spell.category}}<br/>
+                    Creator: {{spell.creator}}<br/>
+                    Effect: {{spell.effect}}<br/>
+                    Hand: {{spell.hand}}<br/>
+                    Incantation: {{spell.incantation}}<br/>
+                    Light: {{spell.light}}<br/>
+                </div>
+
+                <div [ngClass]="spell_styles.spell_info_details">
+                    
+                </div>
+
+                <a
+                    href={{spell.wiki}}
+                    [ngClass]="spell_styles.spell_more"
+                    target="_blank"
+                >See more</a>
+            </section>
+        </li>
+    </ul>
+</main>
